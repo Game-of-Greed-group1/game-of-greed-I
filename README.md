@@ -1,7 +1,7 @@
 # Game of Greed 
 **Contributors: (Group 1)**
-1. joud alnsour 
-2. hind hbashneh
+1. Joud Alnsour 
+2. Hind Hbashneh
 3. Nour Eddein AlAbbasi
 4. Barham Farraj
  
