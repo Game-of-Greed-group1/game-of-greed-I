@@ -7,7 +7,7 @@ As a result, we created our own version of the (dice game Game of Greed) by Pyth
 The Pull Request Link : [PR](https://github.com/Game-of-Greed-group1/game-of-greed-I/tree/main)
 
 
-**Contributors: (Group 1)**
+ # Contributors: (Group 1)
 1. Joud Alnsour 
 2. Hind Hbashneh
 3. Nour Eddein AlAbbasi
