@@ -90,6 +90,19 @@ class Banker :
         self.shelved=0
 
 if __name__ == "__main__":
+    def welcome():
+        """
+        This function just to send a welcome msg on the user point , welcoming them to our game
+        """
+    print('*'*40)
+    print ('**' + ' '*6 + 'Welcome to Game of Greed' + ' '*6 + '**')
+    print ('**' +' '*36 +  '**')
+    print ('**' + '   ' + '   Hope You Enjoy the game       ' + '**')
+    print ('**' +' '*36 +  '**')
+    print ('**' + '   ' + '          V 1.0                  ' + '**' )
+    print ('**' +' '*36 +  '**')
+    print('*'*40)
+
     def main():
         roll = GameLogic.roll_dice()
         scoring=GameLogic.calculate_score(roll)
