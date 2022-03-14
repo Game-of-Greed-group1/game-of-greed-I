@@ -43,6 +43,7 @@ class GameLogic:
             7: 1500,
             8: 1500,
         }
+        
         counts = Counter(dices)
         result = counts.most_common()
         score = 0
@@ -89,9 +90,6 @@ class Banker :
 
 if __name__ == "__main__":
     game_logic = GameLogic()
-    straight = (1, 2, 3, 4, 5, 6)
-    three_fives = (5, 5, 5, 2, 2, 3)
-    single_five = (5,)
-    three_pairs = (2, 2, 1, 1, 6, 6)
-    x = game_logic.calculate_score(three_fives)
+    x=game_logic.calculate_score(GameLogic.roll_dice())
     print(x)
+
