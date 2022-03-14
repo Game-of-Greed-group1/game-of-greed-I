@@ -2,6 +2,7 @@ from random import randint
 from collections import Counter
 
 
+
 class GameLogic:
     """
     Creating a GameLogic Class Containning The logic of Our game.
@@ -43,7 +44,7 @@ class GameLogic:
             7: 1500,
             8: 1500,
         }
-        
+
         counts = Counter(dices)
         result = counts.most_common()
         score = 0
@@ -89,7 +90,38 @@ class Banker :
         self.shelved=0
 
 if __name__ == "__main__":
-    game_logic = GameLogic()
-    x=game_logic.calculate_score(GameLogic.roll_dice())
-    print(x)
+    def main():
+        roll = GameLogic.roll_dice()
+        scoring=GameLogic.calculate_score(roll)
+        print(roll)
+        print(scoring)
+        return roll, scoring
+      
+    bank = Banker()     
+    play = input("Do you want to start the game ?! \n>>")
+    if play.upper() in ['Y', 'YE','YA','YES']:
+        play= True
+    elif play.upper() in ['N', 'NO']:  
+        play=False
+    else: 
+        input('Please answer with y or n! \n>>') 
+           
+    while play:
+        
+        main()
+        
+        again = input("Would you like to play again? \n>")
+        while True:
+            if again.upper() in ['Y', 'YE', 'YES']:
+                break
+            elif again.upper() in ['N', 'NO']:
+                play = False
+                break
+            else:
+                "Please enter yes or no"
+
+    else:
+        print("Thank you For playing")
+        
+   
 
