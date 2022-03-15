@@ -1,10 +1,7 @@
-from game_logic import GameLogic
-from banker import Banker
+
 class Game():
     def __init__(self):
         pass
-
-if __name__ == "__main__":
     def welcome():
         """
         This function just to send a welcome msg on the user point , welcoming them to our game
@@ -18,10 +15,16 @@ if __name__ == "__main__":
     print ('**' +' '*36 +  '**')
     print('*'*40)
 
+if __name__ == "__main__":
+    from game_logic import GameLogic
+    from banker import Banker
+    
+    Game.welcome()
+
     def main():
         roll = GameLogic.roll_dice()
         # scoring=GameLogic.calculate_score(roll)
-        print(roll)
+        print(*roll, sep=',')
         
         return roll
     rounds=0
