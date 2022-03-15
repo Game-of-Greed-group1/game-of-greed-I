@@ -59,9 +59,6 @@ class GameLogic:
             return rules[8]
 
         for i in result:
-            print(counts)
-            print(result)
-            print(rules[i[0]][i[1]])
             score += rules[i[0]][i[1]]
         return score
 

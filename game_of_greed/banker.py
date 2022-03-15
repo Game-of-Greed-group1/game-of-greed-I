@@ -17,8 +17,10 @@ class Banker :
     
     """
     def bank(self): 
+        amount_deposited = self.shelved
         self.balance+=self.shelved 
         self.clear_shelf() 
+        return amount_deposited
 
     """
     Defining a clear_shelf method to re assign the value in the shlved property to 0 . this way will let the next round shelved score equal to zero.
