@@ -2,6 +2,12 @@
 class Game():
     def __init__(self):
         pass
+    
+
+if __name__ == "__main__":
+    from game_logic import GameLogic
+    from banker import Banker
+    
     def welcome():
         """
         This function just to send a welcome msg on the user point , welcoming them to our game
@@ -15,20 +21,18 @@ class Game():
     print ('**' +' '*36 +  '**')
     print('*'*40)
 
-if __name__ == "__main__":
-    from game_logic import GameLogic
-    from banker import Banker
-    
-    Game.welcome()
-
     def main():
         roll = GameLogic.roll_dice()
         # scoring=GameLogic.calculate_score(roll)
         print(*roll, sep=',')
         
         return roll
+    
+    welcome()
+    
     rounds=0
-    bank = Banker()     
+    bank = Banker() 
+        
     play = input("Do you want to start the game ?! \nPlease Answer the question with y or n! \n>>")
     if play.upper() in ['Y', 'YE','YA','YES']:
         play= True
