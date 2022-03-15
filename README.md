@@ -34,6 +34,8 @@ Players may now roll any remaining dice not already put aside in hopes of being 
 
 # PR
 The Pull Request of Rolling dice : [PR1](https://github.com/Game-of-Greed-group1/game-of-greed-I/pull/1)
+
 The Pull Request of Banking : [PR2](https://github.com/Game-of-Greed-group1/game-of-greed-I/pull/2)
+
 The Pull Request of Calculating Price : [PR3](https://github.com/Game-of-Greed-group1/game-of-greed-I/pull/3)
 
