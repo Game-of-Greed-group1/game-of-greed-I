@@ -3,6 +3,7 @@ from collections import Counter
 
 
 
+
 class GameLogic:
     """
     Creating a GameLogic Class Containning The logic of Our game.
@@ -58,83 +59,15 @@ class GameLogic:
             return rules[8]
 
         for i in result:
+            print(counts)
+            print(result)
+            print(rules[i[0]][i[1]])
             score += rules[i[0]][i[1]]
         return score
 
-class Banker :
-    """
-    Define a Banker class to handle the scoring algorithm during the game.
-    have two proprties balance, shelved and assign them to 0 for now.
-    """
 
-    def __init__(self):
-        self.balance=0
-        self.shelved=0
-    """
-    Defining a method called shelf to store the score while playing the game and before saving the round and assign it to the shelved property 
-    """
-    def shelf(self,point):                  
-        self.shelved+=point
-    """
-    Defining a method called Bank to score the latest round score "from the shelved property " and add it the previous rounds score and assign it to the balance proprty. 
-    
-    """
-    def bank(self): 
-        self.balance+=self.shelved 
-        self.clear_shelf() 
 
-    """
-    Defining a clear_shelf method to re assign the value in the shlved property to 0 . this way will let the next round shelved score equal to zero.
-    """
-    def clear_shelf(self):                      
-        self.shelved=0
 
-if __name__ == "__main__":
-    def welcome():
-        """
-        This function just to send a welcome msg on the user point , welcoming them to our game
-        """
-    print('*'*40)
-    print ('**' + ' '*6 + 'Welcome to Game of Greed' + ' '*6 + '**')
-    print ('**' +' '*36 +  '**')
-    print ('**' + '   ' + '   Hope You Enjoy the game       ' + '**')
-    print ('**' +' '*36 +  '**')
-    print ('**' + '   ' + '          V 1.0                  ' + '**' )
-    print ('**' +' '*36 +  '**')
-    print('*'*40)
-
-    def main():
-        roll = GameLogic.roll_dice()
-        scoring=GameLogic.calculate_score(roll)
-        print(roll)
-        print(scoring)
-        return roll, scoring
-      
-    bank = Banker()     
-    play = input("Do you want to start the game ?! \n>>")
-    if play.upper() in ['Y', 'YE','YA','YES']:
-        play= True
-    elif play.upper() in ['N', 'NO']:  
-        play=False
-    else: 
-        input('Please answer with y or n! \n>>') 
-           
-    while play:
-        
-        main()
-        
-        again = input("Would you like to play again? \n>")
-        while True:
-            if again.upper() in ['Y', 'YE', 'YES']:
-                break
-            elif again.upper() in ['N', 'NO']:
-                play = False
-                break
-            else:
-                "Please enter yes or no"
-
-    else:
-        print("Thank you For playing")
         
    
 
