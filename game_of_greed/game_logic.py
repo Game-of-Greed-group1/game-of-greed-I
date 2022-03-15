@@ -1,5 +1,6 @@
 from random import randint
 from collections import Counter
+import emoji
 
 
 
@@ -58,6 +59,9 @@ class GameLogic:
             return rules[8]
 
         for i in result:
+            print(counts)
+            print(result)
+            print(rules[i[0]][i[1]])
             score += rules[i[0]][i[1]]
         return score
 
@@ -105,29 +109,33 @@ if __name__ == "__main__":
 
     def main():
         roll = GameLogic.roll_dice()
-        scoring=GameLogic.calculate_score(roll)
+        # scoring=GameLogic.calculate_score(roll)
         print(roll)
-        print(scoring)
-        return roll, scoring
-      
+        
+        return roll
+    rounds=0
     bank = Banker()     
-    play = input("Do you want to start the game ?! \n>>")
+    play = input("Do you want to start the game ?! \nPlease Answer the question with y or n! \n>>")
     if play.upper() in ['Y', 'YE','YA','YES']:
         play= True
-    elif play.upper() in ['N', 'NO']:  
+    elif play.upper() in ['N', 'NO']: 
+        print(f'If you changed your mind we always here {winking face}') 
         play=False
     else: 
         input('Please answer with y or n! \n>>') 
            
     while play:
-        
+        rounds +=1
+        print(f'Starting Round {rounds}')
+        print('Rolling {6} dice...')
         main()
+        
         
         again = input("Would you like to play again? \n>")
         while True:
             if again.upper() in ['Y', 'YE', 'YES']:
                 break
-            elif again.upper() in ['N', 'NO']:
+            elif again.upper() in ['N', 'NO','Q','QUIT','EX','EXIT']:
                 play = False
                 break
             else:
