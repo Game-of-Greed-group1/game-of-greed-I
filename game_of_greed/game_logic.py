@@ -59,10 +59,12 @@ class GameLogic:
             return rules[8]
 
         for i in result:
+    
             score += rules[i[0]][i[1]]
         return score
 
 
+    
 
 
         

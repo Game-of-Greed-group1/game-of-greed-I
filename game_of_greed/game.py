@@ -1,45 +1,60 @@
 
+from re import T
+
+
 class Game():
     def __init__(self,rolling = None):
         self.rolling = rolling 
         
     def play(self):
-        print("Welcome to Game of Greed")
-        play = input("Wanna play? ")
+        
+        # print("Welcome to Game of Greed")
+        play = input("Welcome to Game of Greed\nWanna play? ")
+               
         rounds = 0   
         score = 0 
+        
         if play.upper() in ['Y', 'YE','YA','YES']:
-            play= True
-        elif play.upper() in ['N', 'NO']: 
+            play = True
+        elif play.upper() in ['N', 'NO','Q']: 
             print("OK. Maybe another time") 
-            play=False
+            play = False
         else: 
-            input('Please answer with y or n! \n>>')
+            play=str(input('Please answer with y or n! \n>>'))
+            
+            
+        
         while play:
             
-            rounds +=1
-            print(f'Starting Round {rounds}')
-            print('Rolling 6 dice...')
-            rolled_dice=self.rolling(6)
+           
+            if play ==True:
+                rounds +=1
+                print(f'Starting round {rounds}')
+                print('Rolling 6 dice...')
+                rolled_dice=self.rolling(6)
+            elif play.lower() in ['r','roll']:
+                print('Rolling 6 dice...')
+                rolled_dice=self.rolling(6)
+            
             nums = []
             for i in rolled_dice:
                 nums.append(str(i))
             print(*nums, sep=',')
             
-            decision = input("Enter dice to keep (no spaces), or (q)uit: ")
-            # print(decision)
-            # print(type(decision))
             
-            # d=int(decision)
-            # while True:
+            decision = input("Enter dice to keep (no spaces), or (q)uit: ")
+            
+            if decision.isdigit() :
                 
-            if decision.strip().isdigit() :
+                
                 d=int(decision)
                 d=[int(a) for a in str(d)]
+                
                 scoring=GameLogic.calculate_score(d)
                 
                 
                 if scoring !=0:
+                    
                 
                     score += scoring
                     shelfed=scoring
@@ -47,7 +62,8 @@ class Game():
                     print(f'You have {shelfed} unbanked points and {len(nums)-len(d)} dice remaining')
                     decision=input('(r)oll again, (b)ank your points or (q)uit ')
                     if decision.lower() in ['r','roll']:
-                        play=True
+                        # this_round=rounds
+                        play='r'
                         
                     if decision.lower() in ['b','bank']:
                         banking=Banker()
@@ -61,13 +77,7 @@ class Game():
                         play=True
                     if decision.lower() in ['q','quit']:
                         print(f"Thanks for playing. You earned {score} points") 
-                        play=False
-                            
-                    # print(score)
-                    # print(decision)
-                    # print(d)
-                    # print("d:",type(d))
-                    # print('type(decision)',type(decision))
+                        play=False              
                 else:
                     print(f"Bad choice. This dice have {scoring} points \nGood Luck Next time!")
                     play=True
@@ -80,7 +90,6 @@ class Game():
                 break
            
             elif decision.upper() in ['R', 'ROLL']:
-                 
                 Play=True
             else:
                 print ('**'*20)

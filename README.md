@@ -23,17 +23,12 @@ The game is played with six dice. A player starts their turn by throwing all six
 
 Players may now roll any remaining dice not already put aside in hopes of being able to make more melds, risking the chance of farkling (see below) and scoring nothing. Players who decide not to take that risk can instead bank. When a player banks any points earned during the round are added to the grand total and are safe for the rest of the game. The player's turn ends and they pass all dice to their opponent who takes their turn.
 
-
-**Estimate of time needed to complete: 5**
-
-**Start time: 10:00 pm**
-
-**Finish time: 4:00 pm**
-
-**Actual time needed to complete: 6 H**
-
+* Game.py **(16/03/2022)**
+  
 # PR
 The Pull Request of Rolling dice : [PR1](https://github.com/Game-of-Greed-group1/game-of-greed-I/pull/1)
 The Pull Request of Banking : [PR2](https://github.com/Game-of-Greed-group1/game-of-greed-I/pull/2)
 The Pull Request of Calculating Price : [PR3](https://github.com/Game-of-Greed-group1/game-of-greed-I/pull/3)
+The Pull Request of Tha game it self : [PR3](https://github.com/Game-of-Greed-group1/game-of-greed-I/pull/3)
+
 
