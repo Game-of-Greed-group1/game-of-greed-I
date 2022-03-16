@@ -24,6 +24,7 @@ The game is played with six dice. A player starts their turn by throwing all six
 Players may now roll any remaining dice not already put aside in hopes of being able to make more melds, risking the chance of farkling (see below) and scoring nothing. Players who decide not to take that risk can instead bank. When a player banks any points earned during the round are added to the grand total and are safe for the rest of the game. The player's turn ends and they pass all dice to their opponent who takes their turn.
 
 * game.py **16/03/2022**
+
 In the game.py you can run the game and enjoy it after cloning our code .
 
 
