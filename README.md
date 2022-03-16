@@ -28,6 +28,18 @@ Players may now roll any remaining dice not already put aside in hopes of being 
 In the game.py you can run the game and enjoy it after cloning our code .
 
 
+**14/03/2022**
+**Estimate of time needed to complete: 5**
+**Start time: 10:00 AM**
+**Finish time: 4:00 PM**
+**Actual time needed to complete: 6 H**
+
+**16/03/2022**
+**Estimate of time needed to complete: 4**
+**Start time: 10:00 AM**
+**Finish time: 3:00 PM**
+**Actual time needed to complete: 5 H**
+
 # PR
 The Pull Request of Rolling dice : [PR1](https://github.com/Game-of-Greed-group1/game-of-greed-I/pull/1)
 
