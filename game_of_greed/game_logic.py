@@ -2,18 +2,18 @@ from random import randint
 from collections import Counter
 
 
-
-
 class GameLogic:
     """
     Creating a GameLogic Class Containning The logic of Our game.
     """
+
+    @staticmethod
     def roll_dice(n=6):
         """
-        Creating Method to create a virtual dices and return a random number from 1 to 6 
+        Creating Method to create a virtual dices and return a random number from 1 to 6
         this method will create ad many dices as wanted by changeing the n value.
         For our game we will stick with 6 dices .
-        
+
         This method will return a tuple of random numbers with length of 6 "number of dices"
 
         """
@@ -30,8 +30,8 @@ class GameLogic:
 
         In the following code will checkk for specific rule followed from a link will attach below this doc string.
 
-        At the end the method will return the score which is calcuated as the rules saved in the dictionary. 
-        
+        At the end the method will return the score which is calcuated as the rules saved in the dictionary.
+
         //search for the counte method and most_common if never heared of them
         """
         # (https://en.wikipedia.org/wiki/Dice_10000)
@@ -59,15 +59,6 @@ class GameLogic:
             return rules[8]
 
         for i in result:
-            print(counts)
-            print(result)
-            print(rules[i[0]][i[1]])
             score += rules[i[0]][i[1]]
+
         return score
-
-
-
-
-        
-   
-
