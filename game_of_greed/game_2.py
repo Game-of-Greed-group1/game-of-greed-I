@@ -28,19 +28,17 @@ class Game:
 
         @print_new_round
         def start_rolling():
-            rolled_dice = GameLogic.roll_dice()
-            nums = [str(i) for i in rolled_dice]
-            print(",".join(nums))
-            # rolled_dice = []
-            # i = 0
-            # while True:
-            #     # round = 0 , index = 0
-            #     # print(self.rolled_dices[i])
-            #     rolled_dice = self.rolled_dices[i]
-            #     nums = [str(i) for i in rolled_dice]
-            #     print(",".join(nums))
-            #     self.rolled_dices.pop(0)
-            #     break
+            # rolled_dice = GameLogic.roll_dice()
+            # nums = [str(i) for i in rolled_dice]
+            # print(",".join(nums))
+            rolled_dice = []
+            i = 0
+            while True:
+                rolled_dice = self.rolled_dices[i]
+                nums = [str(i) for i in rolled_dice]
+                print(",".join(nums))
+                self.rolled_dices.pop(0)
+                break
 
             return rolled_dice
 
