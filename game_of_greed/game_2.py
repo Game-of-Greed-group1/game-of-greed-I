@@ -28,19 +28,19 @@ class Game:
 
         @print_new_round
         def start_rolling():
-            # rolled_dice = GameLogic.roll_dice()
-            # nums = [str(i) for i in rolled_dice]
-            # print(",".join(nums))
-            rolled_dice = []
-            i = 0
-            while True:
-                # round = 0 , index = 0
-                # print(self.rolled_dices[i])
-                rolled_dice = self.rolled_dices[i]
-                nums = [str(i) for i in rolled_dice]
-                print(",".join(nums))
-                self.rolled_dices.pop(0)
-                break
+            rolled_dice = GameLogic.roll_dice()
+            nums = [str(i) for i in rolled_dice]
+            print(",".join(nums))
+            # rolled_dice = []
+            # i = 0
+            # while True:
+            #     # round = 0 , index = 0
+            #     # print(self.rolled_dices[i])
+            #     rolled_dice = self.rolled_dices[i]
+            #     nums = [str(i) for i in rolled_dice]
+            #     print(",".join(nums))
+            #     self.rolled_dices.pop(0)
+            #     break
 
             return rolled_dice
 
@@ -56,7 +56,7 @@ class Game:
             roll_bank_quit = input("(r)oll again, (b)ank your points or (q)uit ")
 
             if roll_bank_quit == "b":
-                if_banked(bank.shelved)
+                if_banked()
                 bank.clear_shelf()
                 return
 
@@ -69,8 +69,7 @@ class Game:
                 print(f"Thanks for playing. You earned {bank.balance} points")
                 return True
 
-        def if_banked(calculated_score):
-            # bank.shelf(calculated_score)
+        def if_banked():
             print(f"You banked {bank.shelved} points in round {self.count_rounds}")
             bank.bank()
             print(f"Total score is {bank.balance} points")
