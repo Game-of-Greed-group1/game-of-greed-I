@@ -1,5 +1,6 @@
 import builtins
-from game_of_greed.game import Game
+
+from game_of_greed.game_2 import Game
 
 
 class Flo:
@@ -91,4 +92,4 @@ class Flo:
 
 
 if __name__ == "__main__":
-    Flo.test("tests/flow/bank_one_roll_then_quit.sim.txt")
+    Flo.test("./bank_one_roll_then_quit.sim.txt")
