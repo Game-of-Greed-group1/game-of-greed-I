@@ -1,5 +1,5 @@
-from game_of_greed.banker import Banker
-from game_of_greed.game_logic import GameLogic
+# from game_of_greed.banker import Banker
+# from game_of_greed.game_logic import GameLogic
 
 
 class Game:
@@ -64,7 +64,7 @@ class Game:
                 else:
                     print("Thanks for playing. You earned 0 points")
                 break
-            elif type(int(again)) == int:
+            elif again.isdigit():
                 user_input = [int(i) for i in again]
                 remaining_dice = len(rolling_dice) - len(user_input)
                 calculated_score = GameLogic.calculate_score(user_input)
