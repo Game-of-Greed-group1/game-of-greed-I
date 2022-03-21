@@ -1,15 +1,26 @@
-
-from re import T
-
-
 class Game():
     def __init__(self,rolling = None):
         self.rolling = rolling 
+    def welcome():
+        """
+        This function just to send a welcome msg on the user point , welcoming them to our game
+        """
         
+        
+        print('*'*40)
+        print ('**' + ' '*6 + 'Welcome to Game of Greed' + ' '*6 + '**')
+        print ('**' +' '*36 +  '**')
+        print ('**' + '   ' + '   Hope You Enjoy the game       ' + '**')
+        print ('**' +' '*36 +  '**')
+        print ('**' + '   ' + '          V 1.0                  ' + '**' )
+        print ('**' +' '*36 +  '**')
+        print('*'*40)
+
+      
     def play(self):
         
-        # print("Welcome to Game of Greed")
-        play = input("Welcome to Game of Greed\nWanna play? ")
+        print("Welcome to Game of Greed")
+        play = input("Wanna play? ")
                
         rounds = 0   
         score = 0 
@@ -21,6 +32,11 @@ class Game():
             play = False
         else: 
             play=str(input('Please answer with y or n! \n>>'))
+            if play.upper() in ['Y','YE','YES']:
+                play = True
+            else :    
+                play = False
+           
             
             
         
@@ -38,7 +54,7 @@ class Game():
             
             nums = []
             for i in rolled_dice:
-                nums.append(str(i))
+                nums.append(int(i))
             print(*nums, sep=',')
             
             
@@ -49,26 +65,26 @@ class Game():
                 
                 d=int(decision)
                 d=[int(a) for a in str(d)]
-                
-                scoring=GameLogic.calculate_score(d)
+                availabe_nums = [i for i in d if i in nums]
+                print('av',availabe_nums)
+                rest = [i for i in d if i not in nums]
+                print('r',rest)
+                scoring=GameLogic.calculate_score(availabe_nums)
                 
                 
                 if scoring !=0:
                     
-                
                     score += scoring
                     shelfed=scoring
-                    # score=scoring.calculate_score(d)
                     print(f'You have {shelfed} unbanked points and {len(nums)-len(d)} dice remaining')
                     decision=input('(r)oll again, (b)ank your points or (q)uit ')
                     if decision.lower() in ['r','roll']:
-                        # this_round=rounds
                         play='r'
                         
                     if decision.lower() in ['b','bank']:
                         banking=Banker()
                         banking.shelf(score)
-                        banked=banking.bank()
+                        banking.bank()
 
                         print(f'You banked {shelfed} points in round {rounds}')
                         print(f'Total score is {score} points')                       
@@ -98,8 +114,9 @@ class Game():
         
 
 if __name__ == "__main__":
-    from game_logic import GameLogic
-    from banker import Banker
+    
+    from game_of_greed.game_logic import GameLogic
+    from game_of_greed.banker import Banker
     
     # def welcome():
     #     """
@@ -123,37 +140,7 @@ if __name__ == "__main__":
         
     #     return roll
     
-    # welcome()
-    
-    # rounds=0
-    # bank = Banker()     
+    Game.welcome()  
     game = Game(GameLogic.roll_dice)
     game.play()
-    # play = input("Do you want to start the game ?! \nPlease Answer the question with y or n! \n>>")
-    # if play.upper() in ['Y', 'YE','YA','YES']:
-    #     play= True
-    # elif play.upper() in ['N', 'NO']: 
-    #     # print(f'If you changed your mind we always here {winking face}') 
-    #     play=False
-    # else: 
-    #     input('Please answer with y or n! \n>>') 
-           
-    # while play:
-    #     rounds +=1
-    #     print(f'Starting Round {rounds}')
-    #     print('Rolling {6} dice...')
-    #     main()
-        
-    #     again = input("Would you like to play again? \n>")
-    #     while True:
-    #         if again.upper() in ['Y', 'YE', 'YES']:
-    #             break
-    #         elif again.upper() in ['N', 'NO','Q','QUIT','EX','EXIT']:
-    #             play = False
-    #             break
-    #         else:
-    #             print ('**'*20)
-    #             again=input('Please choose your words!\nDo you want to continue playing or quit! \n>>')
-
-    # else:
-    #     print("Thank you For playing")
+   
