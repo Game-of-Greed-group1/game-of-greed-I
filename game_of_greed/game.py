@@ -60,7 +60,11 @@ class Game:
                 
                 if again == "q":
                     
+<<<<<<< HEAD
                     if self.banker.balance > 0 or rounds > 1:
+=======
+                    if self.banker.balance > 0 or rounds > 1 :
+>>>>>>> 9fb2bb2e048b250d56489f1afe610cc95a06c29b
                         print(f"Total score is {self.banker.balance} points")
                         print(f"Thanks for playing. You earned {self.banker.balance} points")
                     else:

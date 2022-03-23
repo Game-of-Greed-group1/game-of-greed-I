@@ -26,7 +26,9 @@ Players may now roll any remaining dice not already put aside in hopes of being 
 * game.py **16/03/2022**
 
 In the game.py you can run the game and enjoy it after cloning our code .
+
 **21/03/2022**
+
 Some features addded to the game.py so the game it self follow the actual rules and be more playable
 
 
@@ -70,5 +72,9 @@ The Pull Request of Banking : [PR2](https://github.com/Game-of-Greed-group1/game
 
 The Pull Request of Calculating Price : [PR3](https://github.com/Game-of-Greed-group1/game-of-greed-I/pull/3)
 
-The Pull Request of the game it self : [PR4](https://github.com/Game-of-Greed-group1/game-of-greed-I/pull/5)
+The Pull Request of the game updated to v2 : [PR4](https://github.com/Game-of-Greed-group1/game-of-greed-I/pull/5)
+
+The Pull Request of the game updated to v3 : [PR5](https://github.com/Game-of-Greed-group1/game-of-greed-I/pull/7)
+
+
 
