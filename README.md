@@ -76,5 +76,7 @@ The Pull Request of the game updated to v2 : [PR4](https://github.com/Game-of-Gr
 
 The Pull Request of the game updated to v3 : [PR5](https://github.com/Game-of-Greed-group1/game-of-greed-I/pull/7)
 
+The Pull Request of the game updated to v4.1 : [PR6](https://github.com/Game-of-Greed-group1/game-of-greed-I/pull/11)
+
 
 
