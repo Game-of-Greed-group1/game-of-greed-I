@@ -61,7 +61,7 @@ class Game:
                 
                 if again == "q":
                     
-                    if self.banker.balance > 0:
+                    if self.banker.balance > 0 or rounds > 1 :
                         print(f"Total score is {self.banker.balance} points")
                         print(f"Thanks for playing. You earned {self.banker.balance} points")
                     else:
@@ -107,6 +107,7 @@ class Game:
                     print('Cheater!!! Or possibly made a typo...') 
                     play="cheater, do it again"         
             else:
+                self.banker.clear_shelf()
                 print('Zilch!!! Round over')
                 print(f"You banked {self.banker.shelved} points in round {rounds}")
                 print(f"Total score is {self.banker.balance} points")
