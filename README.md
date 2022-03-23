@@ -26,6 +26,7 @@ Players may now roll any remaining dice not already put aside in hopes of being 
 * game.py **16/03/2022**
 
 In the game.py you can run the game and enjoy it after cloning our code .
+
 **21/03/2022**
 Some features addded to the game.py so the game it self follow the actual rules and be more playable
 
