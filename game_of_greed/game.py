@@ -7,7 +7,6 @@ class Game:
         self.banker = Banker()
         self.calculate_score = GameLogic.calculate_score
         
-    
     @staticmethod
     def is_chosen_values_exist(dices, user_inputs):
 
@@ -61,16 +60,18 @@ class Game:
                 
                 if again == "q":
                     
-                    if self.banker.balance > 0:
+                    if self.banker.balance > 0 or rounds > 1:
                         print(f"Total score is {self.banker.balance} points")
                         print(f"Thanks for playing. You earned {self.banker.balance} points")
                     else:
                         print("Thanks for playing. You earned 0 points")
                     break
                 elif again.isdigit():
+                    
                     rolls=[int(i)for i in rolls]
                     user_input = [int(i) for i in again]
                     check =  Game.is_chosen_values_exist(rolls,user_input)
+                    
                     if check:
                         value=self.calculate_score(user_input)
                         if value:
@@ -82,8 +83,7 @@ class Game:
 
                             roll_again = input("(r)oll again, (b)ank your points or (q)uit ")
                             
-                            if roll_again == "r":
-        
+                            if roll_again == "r":        
                                 play = "r"
                                 
                             elif roll_again == "b":
@@ -107,6 +107,7 @@ class Game:
                     print('Cheater!!! Or possibly made a typo...') 
                     play="cheater, do it again"         
             else:
+                self.banker.clear_shelf()
                 print('Zilch!!! Round over')
                 print(f"You banked {self.banker.shelved} points in round {rounds}")
                 print(f"Total score is {self.banker.balance} points")
