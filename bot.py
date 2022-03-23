@@ -44,7 +44,6 @@ class BaseBot(ABC):
         """steps in front of the real builtin print function"""
 
         line = " ".join(args)
-
         if "unbanked points" in line:
 
             # parse the proper string
@@ -86,11 +85,11 @@ class BaseBot(ABC):
         """simulate user entering which dice to keep.
         Defaults to all scoring dice"""
 
-        roll = GameLogic.get_scorers(self.last_roll)
+        roll = GameLogic.calculate_score(self.last_roll)
 
         roll_string = ""
 
-        for value in roll:
+        for value in self.last_roll:
             roll_string += str(value)
 
         self.report("> " + roll_string)
@@ -125,7 +124,7 @@ class BaseBot(ABC):
             player.reset()
 
         print(
-            f"{cls.__name__}: {num_games} games played with average score of {mega_total // num_games}"
+            f"{cls.__name__}: {num_games} games played with average score of {mega_total // num_games }"
         )
 
 
@@ -135,10 +134,15 @@ class NervousNellie(BaseBot):
     def _roll_bank_or_quit(self):
         return "b"
 
+
 class YourBot(BaseBot):
     def _roll_bank_or_quit(self):
         """your logic here"""
-        return "b"
+
+        if self.unbanked_points >= 200 or self.dice_remaining == 0:
+            return "b"
+
+        return "r"
 
     def _enter_dice(self):
         """simulate user entering which dice to keep.

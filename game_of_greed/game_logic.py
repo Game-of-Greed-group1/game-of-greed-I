@@ -57,7 +57,7 @@ class GameLogic:
 
         if len(dices) == 6 and len(result) == 3 and result[0][1] == 2:
             return rules[8]
-             
+
         for i in result:
             score += rules[i[0]][i[1]]
         return score
